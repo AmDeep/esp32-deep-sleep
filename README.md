@@ -1,5 +1,11 @@
 # ESP32 Deep Sleep Logger
 
+## Engineering evidence
+
+- `tools/battery_life.py` estimates average current and battery runtime from wake and sleep intervals.
+- Run `python tools/battery_life.py --period-s 900` to evaluate a 15-minute logging schedule.
+- The project demonstrates energy-aware firmware design rather than treating deep sleep as a single API call.
+
 ## Objective
 
 Build a low-power temperature logger that wakes from deep sleep, takes one reading, publishes it (or prints it), then returns to sleep. The project demonstrates the ESP32 timer wakeup API and the power-management considerations needed for battery operation.
