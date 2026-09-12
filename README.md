@@ -5,6 +5,7 @@
 - `tools/battery_life.py` estimates average current and battery runtime from wake and sleep intervals.
 - Run `python tools/battery_life.py --period-s 900` to evaluate a 15-minute logging schedule.
 - The project demonstrates energy-aware firmware design rather than treating deep sleep as a single API call.
+- The firmware retains state in RTC memory, reports the wake cause, checks timer-wakeup configuration, flushes serial output, and then enters deep sleep.
 
 ## Objective
 

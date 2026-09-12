@@ -52,7 +52,10 @@ void setup() {
   Serial.println(F(" s"));
   Serial.flush();
 
-  esp_sleep_enable_timer_wakeup(SLEEP_US);
+  if (esp_sleep_enable_timer_wakeup(SLEEP_US) != ESP_OK) {
+    Serial.println(F("Failed to configure timer wakeup"));
+    return;
+  }
   esp_deep_sleep_start();
 }
 
